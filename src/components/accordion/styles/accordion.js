@@ -74,3 +74,7 @@ export const Body = styled.div`
     line-height: 22px;
   }
 `;
+
+export const Frame = styled.div`
+  margin-bottom: 40px;
+`;
