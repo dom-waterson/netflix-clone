@@ -14,6 +14,27 @@ export const Background = styled.div`
   }
 `;
 
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const Link = styled.p`
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
+  font-weight: ${({ active }) => (active === true ? "400" : "normal")};
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   margin: 0 56px;
