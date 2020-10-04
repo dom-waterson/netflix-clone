@@ -6,8 +6,8 @@ import { Home, Browse, Signin, Signup } from "./pages";
 import { IsUserRedirect, ProtectedRoute } from "./helpers/routes";
 import { useAuthListener } from "./hooks";
 
-function App() {
-  const user = useAuthListener();
+export function App() {
+  const { user } = useAuthListener();
 
   return (
     <Router>
@@ -40,5 +40,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

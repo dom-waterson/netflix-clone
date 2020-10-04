@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
-
-import { SelectProfileContainer } from "./profiles";
-import FooterContainer from "./footer";
-
-import { FirebaseContext } from "../context";
-import { Loading, Header, Card } from "../components";
+import React, { useState, useEffect, useContext } from "react";
+import { Card, Header, Loading, Player } from "../components";
 import * as ROUTES from "../constants/routes";
 import logo from "../logo.svg";
+import { FirebaseContext } from "../context";
+import { SelectProfileContainer } from "./profiles";
+import FooterContainer from "./footer";
 
 export default function BrowseContainer({ slides }) {
   const [category, setCategory] = useState("series");
@@ -31,6 +29,7 @@ export default function BrowseContainer({ slides }) {
   return profile.displayName ? (
     <>
       {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
+
       <Header src="joker1" dontShowOnSmallViewPort>
         <Header.Frame>
           <Header.Group>
@@ -48,7 +47,6 @@ export default function BrowseContainer({ slides }) {
               Films
             </Header.TextLink>
           </Header.Group>
-
           <Header.Group>
             <Header.Search
               searchTerm={searchTerm}
@@ -70,6 +68,7 @@ export default function BrowseContainer({ slides }) {
             </Header.Profile>
           </Header.Group>
         </Header.Frame>
+
         <Header.Feature>
           <Header.FeatureCallOut>Watch Joker Now</Header.FeatureCallOut>
           <Header.Text>
@@ -100,12 +99,11 @@ export default function BrowseContainer({ slides }) {
                 </Card.Item>
               ))}
             </Card.Entities>
-
             <Card.Feature category={category}>
-              {/* <Player>
+              <Player>
                 <Player.Button />
                 <Player.Video src="/videos/bunny.mp4" />
-              </Player> */}
+              </Player>
             </Card.Feature>
           </Card>
         ))}
